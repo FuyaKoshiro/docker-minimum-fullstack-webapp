@@ -1,0 +1,20 @@
+# Dockerfile.client
+FROM node:18-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json for Next.js dependencies
+COPY client/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY client/ .
+
+# Expose the Next.js default port
+EXPOSE 3000
+
+# # Run Next.js development server
+CMD ["npm", "run", "dev"]
