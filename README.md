@@ -216,3 +216,10 @@ volumes:
   # Use this volume to persist data across different builds
   pgdata:
 ```
+
+## Time to run the containers!
+Start the desktop docker app.
+Run
+```
+docker-compose up --build
+```
